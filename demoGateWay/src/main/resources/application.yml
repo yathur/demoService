@@ -1,0 +1,17 @@
+
+# 应用名称
+spring:
+  application:
+    name: demoGateWay
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      routes:
+        - id: aa
+          uri: lb://demoServiceProvider
+          predicates:
+            - Path=/user/*
+server:
+  port: 8900

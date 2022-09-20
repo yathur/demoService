@@ -1,0 +1,28 @@
+# 应用名称
+#spring.application.name=demoConsumer
+spring:
+  application:
+    name: demoConsumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+# 应用服务 WEB 访问端口
+#server.port=8081
+#spring.cloud.nacos.discovery.server-addr=localhost:8848
+#feign.hystrix.enabled=true
+server:
+  port: 8081
+feign:
+  hystrix:
+    enabled: true
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info,hystrix.stream
+  security:
+    enable: false

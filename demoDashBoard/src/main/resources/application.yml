@@ -1,0 +1,10 @@
+# 应用名称
+spring:
+  application:
+    name: demoDashBoard
+server:
+  port: 7999
+
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "*"
